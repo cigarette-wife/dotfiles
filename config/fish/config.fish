@@ -17,9 +17,6 @@ set -xg PATH $HOME/.local/bin $PATH
 set -xg VISUAL vim
 set -xg EDITOR $VISUAL
 
-set -xg GIT_AUTHOR_NAME "Maxine"
-set -xg GIT_AUTHOR_EMAIL "krebs.maxine@pm.me"
-
 if test -e $HOME/.config/fish/config.fish.local
     source $HOME/.config/fish/config.fish.local
 end
