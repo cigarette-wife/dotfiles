@@ -6,7 +6,5 @@
     ~/.githelpers:
     ~/.gitignore:
     ~/.tmux.conf:
-    ~/.vim:
-    ~/.vimrc:
     ~/.bin:
     ~/.config/nvim: config/nvim
