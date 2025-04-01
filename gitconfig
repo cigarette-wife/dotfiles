@@ -1,19 +1,11 @@
 [alias]
   ### Informational
   # Long-form
-  alias            = !git config --get-regex '^alias\\.'
   amend            = commit --amend
-  blame-short      = blame -c
-  chart            = !git diff --stat=$(tput cols)
-  fetch-all        = !git remote -v | awk '{print $1}' | sort -u | xargs -L1 git fetch -v --progress
   files            = diff --name-only
   github-log       = !git --no-pager prettylog --reverse
-  info-pane        = !clear && git status && git stash list
   last-commit      = log -n 1
   local-branches   = branch -l
-  message          = show -s --format=medium
-  nuke-dry         = clean -xdfn
-  nuke-interactive = clean -xdfi
   prettylog        = log --pretty=format:'%C(blue)%h%C(reset) %C(bold)%s%C(reset) %C(yellow)<%ae>%C(reset)' --abbrev-commit
   push-force       = push --force-with-lease
   remote-branches  = branch -r
@@ -22,49 +14,26 @@
   # Abbreviated
   br   = branch
   bs   = !git blame-short
-  ch   = !git chart
   cm   = commit
   dc   = diff --cached
-  fa   = !git fetch-all
   ghl  = !git github-log
   l5   = !git github-log -n5
   l10  = !git github-log -n10
   lbr  = !git local-branches
   lc   = !git last-commit
-  lm   = log master..
-  msg  = !git message
-  nd   = !git nuke-dry
-  ni   = !git nuke-interactive
+  lm   = log main..
   p    = push -u
   pf   = !git push-force
-  pfoh = !git push-force origin HEAD
   pl   = !git prettylog
-  poh  = push -u origin HEAD
-  puom = pull origin master
+  puom = pull origin main
   rbr  = !git remote-branches
   st   = status
   sum  = diff --shortstat
-
-
-  ### Potentially destructive
-  # Long-form
-  back             = checkout -
-  nuke             = clean -xdf
-  submodule-update = !git submodule update --init --recursive
-  # Abbreviated
-  cl  = clean -df
-  co  = checkout
-  sub = !git submodule-update
-
-  ### Maxine is a little more lazy and used to what she had
   aa = add --all
   ap = add --patch
   ci = commit -v
   co = checkout
-  pf = push --force-with-lease
-  st = status
-  pm = pull origin master
-  mm = merge master
+  mm = merge main
 
     # Fancy logging.
   #   h = head
@@ -128,9 +97,10 @@
   tab-in-indent = true
 
 [diff]
-  algorithm           = patience
+  algorithm           = histogram
   compactionHeuristic = true
   renames             = copies
+  colorMoved          = true
 
 [merge]
   verbosity = 5
@@ -138,6 +108,7 @@
 
 [push]
   default = current
+  autoSetupRemote = true
 
 [status]
   showUntrackedFiles = all
@@ -170,16 +141,23 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
-    navigate = true  # use n and N to move between diff sections
-    dark = true      # or light = true, or omit for auto-detection
-    line-numbers = true
-    hyperlinks = true
-    side-by-side = true
-    true-color = always
+  navigate = true  # use n and N to move between diff sections
+  dark = true      # or light = true, or omit for auto-detection
+  line-numbers = true
+  hyperlinks = true
+  side-by-side = true
+  true-color = always
+
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+
+[branch]
+	sort = -committerdate
