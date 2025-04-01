@@ -1,14 +1,14 @@
 function gmm
   set branch (git rev-parse --abbrev-ref HEAD)
 
-  if [ $branch = 'master' ]
-    git pull origin master
+  if [ $branch = 'main' ]
+    git pull origin main
     git remote prune origin
   else
-    git checkout master
-    git pull origin master
+    git checkout main
+    git pull origin main
     git remote prune origin
     git checkout $branch
-    git merge master
+    git merge main
   end
 end
