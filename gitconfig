@@ -122,6 +122,7 @@
   safecrlf   = warn
   trustctime = false
   excludesfile = ~/.gitignore
+  pager = delta
 
 [core.whitespace]
   tab-in-indent = true
@@ -133,6 +134,7 @@
 
 [merge]
   verbosity = 5
+  conflictstyle = zdiff3
 
 [push]
   default = current
@@ -170,3 +172,14 @@
 	whitespace = red reverse
 [init]
 	defaultBranch = main
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+    line-numbers = true
+    hyperlinks = true
+    side-by-side = true
+    true-color = always
