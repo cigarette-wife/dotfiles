@@ -1,0 +1,11 @@
+- clean: ['~']
+
+- link:
+    ~/.config/fish: config/fish
+    ~/.gitconfig:
+    ~/.githelpers:
+    ~/.tmux.conf:
+    ~/.vim:
+    ~/.vimrc:
+
+
