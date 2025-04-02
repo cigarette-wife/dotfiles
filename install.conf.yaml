@@ -2,9 +2,10 @@
 
 - link:
     ~/.config/fish: config/fish
+    ~/.config/nvim: config/nvim
+    ~/.config/mise: config/mise
     ~/.gitconfig:
     ~/.githelpers:
     ~/.gitignore:
     ~/.tmux.conf:
     ~/.bin:
-    ~/.config/nvim: config/nvim
