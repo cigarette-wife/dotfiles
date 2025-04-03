@@ -53,7 +53,7 @@
   la = !git l --all
   b = "!. ~/.githelpers && pretty_git_branch"
   bs = "!. ~/.githelpers && pretty_git_branch_sorted"
-  change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
+
 [color]
   branch      = auto
   diff        = auto
