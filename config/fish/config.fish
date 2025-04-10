@@ -13,6 +13,8 @@ set -xg VISUAL vim
 set -xg EDITOR $VISUAL
 set -xg SSH_AUTH_SOCK $HOME/.1password/agent.sock
 
+zoxide init fish | source
+
 if test -e $HOME/.config/fish/config.fish.local
     source $HOME/.config/fish/config.fish.local
 end
