@@ -1,9 +1,10 @@
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.config/fish: config/fish
     ~/.config/nvim: config/nvim
     ~/.config/mise: config/mise
+    ~/.config/ghostty: config/ghostty
     ~/.gitconfig:
     ~/.githelpers:
     ~/.gitignore:
