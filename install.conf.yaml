@@ -12,3 +12,9 @@
     ~/.tmux.conf:
     ~/.digrc:
     ~/.bin:
+
+- shell:
+    - command: mise install
+      stdout: true
+      stderr: true
+      description: Installing tools with mise
