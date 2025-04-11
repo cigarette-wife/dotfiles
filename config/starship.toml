@@ -165,7 +165,6 @@ style = "dimmed yellow"
 [git_branch]
 format = "\\([$branch(:$remote_branch)]($style)"
 style = "pink"
-truncation_length = 11
 
 [git_metrics]
 format = '([+$added]($added_style))([-$deleted]($deleted_style))'
